@@ -20,32 +20,33 @@ const Kurssi = (props) => {
  }
 
  const Yhteensa = (props) => {
-     return <p>yhteensä {props.t1 + props.t2 + props.t3} tehtävää</p>
+     return <p>yhteensä {props.osat[0].tehtavia + props.osat[1].tehtavia + props.osat[2].tehtavia} tehtävää</p>
  }
 
  const App = () => {
-    const kurssi = 'Half Stack -sovelluskehitys'
-    const osat = [
-      {
-        nimi: 'Reactin perusteet',
-        tehtavia: 10
-      },
-      {
-        nimi: 'Tiedonvälitys propseilla',
-        tehtavia: 7
-      },
-      {
-        nimi: 'Komponenttien tila',
-        tehtavia: 14
-      }
-    ]
-  
+    const kurssi = {
+      nimi: 'Half Stack -sovelluskehitys',
+      osat: [
+        {
+          nimi: 'Reactin perusteet',
+          tehtavia: 10
+        },
+        {
+          nimi: 'Tiedonvälitys propseilla',
+          tehtavia: 7
+        },
+        {
+          nimi: 'Komponenttien tila',
+          tehtavia: 14
+        }
+      ]
+    }
 
    return (
      <div>
-      <Kurssi name={kurssi}/>
-      <Sisalto osat={osat}/> 
-      <Yhteensa osat={osat}/>
+      <Kurssi name={kurssi.nimi}/>
+      <Sisalto osat={kurssi.osat}/> 
+      <Yhteensa osat={kurssi.osat}/>
     </div>
   )
 }
