@@ -8,9 +8,9 @@ const Kurssi = (props) => {
  const Sisalto = (props) => {
      console.log('props',props)
      return <div>
-        <Osa nimi={props.part1.nimi} tehtavia={props.part1.tehtavia}/>
-         <Osa nimi={props.part2.nimi} tehtavia={props.part2.tehtavia}/>
-         <Osa nimi={props.part3.nimi} tehtavia={props.part3.tehtavia}/>
+        <Osa nimi={props.osat[0].nimi} tehtavia={props.osat[0].tehtavia}/>
+         <Osa nimi={props.osat[1].nimi} tehtavia={props.osat[1].tehtavia}/>
+         <Osa nimi={props.osat[2].nimi} tehtavia={props.osat[2].tehtavia}/>
      </div>
  }
 
@@ -44,9 +44,8 @@ const Kurssi = (props) => {
    return (
      <div>
       <Kurssi name={kurssi}/>
-      <Sisalto part1={osat[0]} part2={osat[1]} part3={osat[2]} 
-      /> 
-      <Yhteensa t1={osat[0].tehtavia} t2={osat[1].tehtavia} t3={osat[2].tehtavia}/>
+      <Sisalto osat={osat}/> 
+      <Yhteensa osat={osat}/>
     </div>
   )
 }
