@@ -25,25 +25,28 @@ const Kurssi = (props) => {
 
  const App = () => {
     const kurssi = 'Half Stack -sovelluskehitys'
-    const osa1 = {
-      nimi: 'Reactin perusteet',
-      tehtavia: 10
-    }
-    const osa2 = {
-      nimi: 'Tiedonvälitys propseilla',
-      tehtavia: 7
-    }
-    const osa3 = {
-      nimi: 'Komponenttien tila',
-      tehtavia: 14
-    }
+    const osat = [
+      {
+        nimi: 'Reactin perusteet',
+        tehtavia: 10
+      },
+      {
+        nimi: 'Tiedonvälitys propseilla',
+        tehtavia: 7
+      },
+      {
+        nimi: 'Komponenttien tila',
+        tehtavia: 14
+      }
+    ]
+  
 
    return (
      <div>
       <Kurssi name={kurssi}/>
-      <Sisalto part1={osa1} part2={osa2} part3={osa3} 
+      <Sisalto part1={osat[0]} part2={osat[1]} part3={osat[2]} 
       /> 
-      <Yhteensa t1={osa1.tehtavia} t2={osa2.tehtavia} t3={osa3.tehtavia}/>
+      <Yhteensa t1={osat[0].tehtavia} t2={osat[1].tehtavia} t3={osat[2].tehtavia}/>
     </div>
   )
 }
